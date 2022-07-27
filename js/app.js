@@ -21,7 +21,6 @@ var gameover = false;
         opt2 = document.getElementById('opt2');
         opt3 = document.getElementById('opt3');
         opt4 = document.getElementById('opt4');
-        currentScore = document.getElementById('currentScore');
 
         allAnswer = [];
         switchAnswers = [];
@@ -47,12 +46,13 @@ var gameover = false;
             currentScore = currentScore + 1;
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
-            currentScore.textContent = currentScore;
+            displayScore.textContent = currentScore;
             generate_equation();
         }
         else {
             generate_equation();
             currentProblem = currentProblem + 1;
+            displayProb.textContent = currentProblem;
         }
     });
 
@@ -61,12 +61,13 @@ var gameover = false;
             currentScore = currentScore + 1;
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
-            currentScore.textContent = currentScore;
+            displayScore.textContent = currentScore;
             generate_equation();
         }
         else {
             generate_equation();
             currentProblem = currentProblem + 1;
+            displayProb.textContent = currentProblem;
         }
     });
 
@@ -75,12 +76,13 @@ var gameover = false;
             currentScore = currentScore + 1;
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
-            currentScore.textContent = currentScore;
+            displayScore.textContent = currentScore;
             generate_equation();
         }
         else {
             generate_equation();
             currentProblem = currentProblem + 1;
+            displayProb.textContent = currentProblem;
         }
     });
 
@@ -89,12 +91,13 @@ var gameover = false;
             currentScore = currentScore + 1;
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
-            currentScore.textContent = currentScore;
+            displayScore.textContent = currentScore;
             generate_equation();
         }
         else {
             generate_equation();
             currentProblem = currentProblem + 1;
+            displayProb.textContent = currentProblem;
         }
     });
 
