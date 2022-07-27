@@ -49,3 +49,16 @@ button {
 .hidden {
   display:none;
 }
+
+#problem .expression {
+  font-size: 48px;
+  border: 1px solid #eeeeee;
+}
+
+#expression{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  text-align: center;
+}
