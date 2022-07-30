@@ -1,10 +1,10 @@
 //initialize variables
 const limit = 10;
     let answer = 0;
-    const currentProblem = 1;
-    const currentScore = 0;
-    const displayProb = document.querySelector("#currentProblem");
-    const displayScore = document.querySelector("#currentScore");
+    var currentProblem = 1;
+    var currentScore = 0;
+    var displayProb = document.querySelector("#currentProblem");
+    var displayScore = document.querySelector("#currentScore");
 
 
     function generate_equation(){
@@ -16,7 +16,8 @@ const limit = 10;
         document.getElementById('prob1').innerHTML = prob1;
         document.getElementById('prob2').innerHTML = prob2;
 
-        answer = eval(prob1 * prob2); //using eval to make JS perform a math
+        //using eval to make JS perform a math
+        answer = eval(prob1 * prob2);
 
         //sets up other answer possibilities (false options)
         const dummyAnswer1 = Math.floor(Math.random() * 50);
@@ -25,9 +26,9 @@ const limit = 10;
 
         //moves those options into a format usable by front end
         const opt1 = document.getElementById('opt1');
-        opt2 = document.getElementById('opt2');
-        opt3 = document.getElementById('opt3');
-        opt4 = document.getElementById('opt4');
+        const opt2 = document.getElementById('opt2');
+        const opt3 = document.getElementById('opt3');
+        const opt4 = document.getElementById('opt4');
 
         //setting up the arrays to randomize what order the answers are in
         allAnswer = [];
@@ -40,7 +41,8 @@ const limit = 10;
         for (i = allAnswer.length; i--;){
             switchAnswers.push(allAnswer.splice(Math.floor(Math.random() * (i + 1)), 1)[0]);
         };
-        //initializes the array to be red by the Front end
+       
+        //initializes the array to be read by the Front end
         opt1.innerHTML = switchAnswers[0];
         opt2.innerHTML = switchAnswers[1];
         opt3.innerHTML = switchAnswers[2];
@@ -55,19 +57,19 @@ const limit = 10;
 
     opt1.addEventListener("click", ()=> {
         if(opt1.innerHTML == answer) {
-            addPoints()
+            addPoints();
             if (currentProblem === limit){
                 hideTheEquation();
             }
-            generate_equation();
-        }
+            generate_equation();}
+
         else {
+            generate_equation();
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
             if (currentProblem === limit){
                 hideTheEquation();
             }
-            else {generate_equation();}
         }
     });
 
@@ -77,15 +79,15 @@ const limit = 10;
             if (currentProblem === limit){
                 hideTheEquation();
             }
-            generate_equation();
-        }
+            generate_equation();}
+
         else {
+            generate_equation();
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
             if (currentProblem === limit){
                 hideTheEquation();
             }
-            else {generate_equation();}
         }
     });
 
@@ -108,7 +110,6 @@ const limit = 10;
     });
 
     opt4.addEventListener("click", ()=> {
-
         if(opt4.innerHTML == answer) {
             addPoints();
             if (currentProblem === limit){
@@ -117,12 +118,12 @@ const limit = 10;
             generate_equation();}
 
         else {
+            generate_equation();
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
             if (currentProblem === limit){
                 hideTheEquation();
             }
-            else {generate_equation();}
         }
     });
 
@@ -135,6 +136,10 @@ const limit = 10;
             currentProblem = currentProblem + 1;
             displayProb.textContent = currentProblem;
             displayScore.textContent = currentScore;
+    }
+
+    function startOver() {
+
     }
 
     generate_equation();
